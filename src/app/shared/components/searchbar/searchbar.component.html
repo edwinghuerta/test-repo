@@ -1,0 +1,7 @@
+<input
+  type="text"
+  [(ngModel)]="value"
+  placeholder="Search..."
+  (keyup.enter)="emit()"
+/>
+<i class="fal fa-search" (click)="emit()"></i>

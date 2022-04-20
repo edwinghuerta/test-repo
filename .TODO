@@ -1,0 +1,14 @@
+MVP:
+  ✔ Auth Flow @done(20-08-21 02:20)
+  ✔ Add communities (easy for user) @done(20-08-21 03:29)
+  ✔ Filter communities @done(20-08-21 02:27)
+  ☐ Add partner
+      ☐ With merchant info
+      ☐ Merchant selection
+  ☐ Add members to community
+  ☐ Switch member to admin or vice versa
+
+Details:
+  ✔ Form dialog @done(20-08-21 03:29)
+  ☐ Image in min card
+  ☐ Options in card

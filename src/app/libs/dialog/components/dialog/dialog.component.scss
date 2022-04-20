@@ -1,0 +1,130 @@
+@import "mixins";
+
+:host {
+  z-index: 1005;
+  transition: 0.18s;
+  position: fixed;
+  @include flex(column nowrap, center, center);
+  @include bounds(0, 0, 0, 0);
+
+  .backdrop {
+    z-index: 100;
+    position: fixed;
+    @include bounds(0, 0, 0, 0);
+    @include background(#2228, 3px);
+  }
+
+  .dialog-frame {
+    z-index: 500;
+    @include flex(column nowrap, flex-start, flex-start);
+    transition: 0.18s;
+    background-color: var(--dialog-background, white);
+    overflow: hidden;
+    min-height: 20vh;
+
+    .dialog-frame-header {
+      color: var(--dialog-header-color, white);
+      background-color: var(--dialog-header-background, #333);
+      @include flex(row nowrap, center, flex-start);
+      @include size(100%, 3rem);
+      padding: 0.5rem 1rem 0.5rem 1rem;
+
+      .dialog-title {
+        font-size: 1.2rem;
+      }
+
+      .dialog-actions {
+        @include flex(row nowrap, center, flex-end);
+        font-size: 1.2rem;
+        margin-left: auto;
+        & > a {
+          @include flex(row nowrap, center, center);
+          @include size(2rem);
+          outline: none !important;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .dialog-frame-content {
+      @include size(100%, unset);
+      flex: 1 1;
+      padding: 30px;
+    }
+  }
+}
+
+:host[type="window"] {
+  .dialog-frame {
+    @include elevate(4);
+    transform: translateY(0%) !important;
+    border-radius: 15px !important;
+    width: 90vw !important;
+    max-width: 400px !important;
+    min-width: unset !important;
+    background-color: #F6F6F6;
+    & .dialog-frame-content {
+      padding: 15px;
+    }
+  }
+}
+
+:host[type="fullscreen"] {
+  .dialog-frame {
+    border-radius: 0px !important;
+    width: 100vw !important;
+    min-height: 100% !important;
+    margin-left: calc((100vw - 500px)/2);
+    margin-right: calc((100vw - 500px)/2);
+    min-width: unset !important;
+    overflow: scroll;
+    & .dialog-frame-content {
+      padding: 0px !important;
+    }
+  }
+}
+
+:host[type="action-sheet"] {
+  justify-content: flex-end !important;
+  .dialog-frame {
+    width: 100%;
+    min-width: 100%;
+    @include elevate(2);
+    border-radius: 0.6rem 0.6rem 0 0;
+  }
+}
+
+:host[type="flat-action-sheet"] {
+  justify-content: flex-end !important;
+  .dialog-frame {
+    width: 100%;
+    min-width: 100%;
+    @include elevate(2);
+    
+    border-radius: 0 0 0 0 !important;
+  }
+}
+
+:host[type="top-action-sheet"] {
+  justify-content: flex-start !important;
+  @include bounds(0, 0, 0, 0);
+  .dialog-frame {
+    width: 100%;
+    min-width: 100%;
+    @include elevate(2);
+    border-radius: 0px !important;
+    .dialog-frame-content {
+      @include size(100%, unset);
+      flex: 1 1;
+      padding: 0px !important;
+    }
+  }
+}
+
+:host.maximized {
+  .dialog-frame {
+    min-width: 100% !important;
+    min-height: 100% !important;
+    border-radius: 0 !important;
+  }
+}

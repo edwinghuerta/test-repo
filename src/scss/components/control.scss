@@ -1,0 +1,91 @@
+@import "../theme";
+@import "../mixins";
+
+.form-control {
+  @include flex(column nowrap, stretch, center);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  --dark-color: #2f3a3f;
+  --gray-color: #f0f0f0;
+
+  .control-label {
+    padding: 0.3em;
+    margin-bottom: 0.3rem;
+    font-size: 0.9em;
+    color: var(--dark-color);
+  }
+
+  .control-input {
+    @include flex(row nowrap, stretch, flex-start);
+    position: relative;
+    background: transparent;
+    height: 3rem;
+    border-radius: 0.3rem;
+    width: 100%;
+    overflow: hidden;
+    font-size: inherit;
+
+    border: 1px solid var(--gray-color);
+    &--icon {
+      @include flex(row, center, center);
+      @include size(3rem);
+      flex: 0 0 3rem;
+      background-color: var(--gray-color);
+      color: var(--dark-color);
+      font-size: inherit;
+    }
+
+    &--prefix {
+      @include flex(row, center, center);
+      @include size(auto, 100%);
+      color: var(--dark-color);
+      padding: 0 0.3em 0 0.6rem;
+      font-size: inherit;
+    }
+
+    &--control {
+      @include flex(row, center, flex-start);
+      color: var(--dark-color);
+      background: transparent;
+      padding: 0.6rem;
+      border: none;
+      flex: 1 1;
+      font-size: inherit;
+      width: 100%;
+    }
+
+    &--functions {
+      @include flex(row, center, flex-end);
+      background: transparent;
+      font-size: inherit;
+      app-button {
+        @include size(2rem);
+        flex: 0 0 2rem;
+        cursor: pointer;
+        padding: 0.6rem;
+      }
+    }
+
+    .control-input--prefix + .control-input--control {
+      padding: 0.6rem 0.6rem 0.6rem 0.3rem;
+    }
+  }
+
+  .control-hint {
+    padding: 0.3em;
+    font-size: 0.8rem;
+    margin-top: 0.6rem;
+    font-weight: 200;
+  }
+
+  &.checkbox-control {
+    @include flex;
+    .control-label {
+      margin: 0 0 0 0.6rem !important;
+    }
+
+    :checked + .checkbox__checkmark:before {
+      background-color: get-color("primary") !important;
+    }
+  }
+}

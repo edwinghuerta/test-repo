@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>SaleFlow</title>
+    <base href="/" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale = 1.0, user-scalable=no"
+    />
+    <meta name="theme-color" content="#1976d2" />
+    <!--<meta name="google-signin-client_id" content="964059680966-lpq9bi386j6s85oeuhnvrq5rvudhqdgn.apps.googleusercontent.com"/>-->
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <!-- IOS METATAGS -->
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Reward *Charly" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    /> -->
+    <!-- <link rel="apple-touch-icon" href="/assets/icons/icon-128x128.png" /> -->
+    <!--<link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/assets/icons/icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/assets/icons/icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="167x167"
+      href="/assets/icons/icon-167x167.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/icons/icon-180x180.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="192x192"
+      href="/assets/icons/icon-192x192.png"
+    />-->
+    <!--  -->
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="manifest" crossorigin="use-credentials" href="manifest.webmanifest" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://storage.googleapis.com/non-spec-apps/mio-icons/latest/outline.css"
+    />
+    <script src="https://js.stripe.com/v3/"></script>
+    <style type="text/css">
+      body,
+      html {
+        height: 100%;
+      }
+      .app-loading {
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='444.748' height='932' viewBox='0 0 444.748 932'%3E%3Cdefs%3E%3ClinearGradient id='linear-gradient' x2='1' y2='1' gradientUnits='objectBoundingBox'%3E%3Cstop offset='0' stop-color='%23173781'/%3E%3Cstop offset='1' stop-color='%23051e3a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect id='Rectangle' width='444.748' height='932' fill='url(%23linear-gradient)'/%3E%3C/svg%3E%0A");
+        background-size: cover;
+      }
+
+      .app-loading .spinner {
+        height: 120px;
+        width: 120px;
+        animation: rotate 2s linear infinite;
+        transform-origin: center center;
+        position: absolute;
+        bottom: 60px;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+
+      .app-loading .title {
+        text-align: center;
+        font-size: 40px;
+        color: white;
+      }
+
+      .app-loading .logo {
+        width: 200px;
+        display: block;
+        margin: 0 auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      .app-loading img {
+        width: 190px;
+        display: block;
+        margin: 0 auto;
+        padding-top: 10px;
+      }
+
+      .app-loading .spinner .path {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+        animation: dash 1.5s ease-in-out infinite;
+        stroke-linecap: round;
+        stroke: #ddd;
+      }
+
+      @keyframes rotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes dash {
+        0% {
+          stroke-dasharray: 1, 200;
+          stroke-dashoffset: 0;
+        }
+        50% {
+          stroke-dasharray: 89, 200;
+        }
+        100% {
+          stroke-dasharray: 89, 200;
+          stroke-dashoffset: -124px;
+        }
+      }
+    </style>
+  </head>
+  <body ontouchstart="">
+    <app-root>
+      <div class="app-loading">
+        <img class="logo" src="./assets/images/abeja04.png" alt="" />
+        <div class="title">Welcome To</div>
+        <img src="./assets/images/logo.png" alt="" />
+        <svg class="spinner" viewBox="25 25 50 50">
+          <circle
+            class="path"
+            cx="50"
+            cy="50"
+            r="20"
+            fill="none"
+            stroke-width="2"
+            stroke-miterlimit="10"
+          />
+        </svg>
+      </div>
+    </app-root>
+    <noscript
+      >Please enable JavaScript to continue using this application.</noscript
+    >
+    <script
+      async
+      src="https://unpkg.com/pwacompat"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.setImmediate = window.setTimeout;
+    </script>
+    <script src="/assets/js/fontawesome.js"></script>
+  </body>
+</html>
