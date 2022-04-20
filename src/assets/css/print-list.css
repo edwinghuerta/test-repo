@@ -1,0 +1,113 @@
+body,
+.list-content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.selection-toolbar {
+  display: none;
+}
+
+card {
+  box-shadow: none;
+  position: relative;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  background-color: white;
+  overflow: hidden;
+  color: #2f3a3fdd;
+  border-bottom: 1px solid #2f3a3f66;
+}
+
+.card-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: 6rem;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  min-height: 6rem !important;
+  max-height: 6rem !important;
+}
+
+.card-image {
+  transition: 0.24s;
+  height: 12rem;
+  max-height: 12rem;
+  margin-bottom: 0.3rem;
+  width: 6rem;
+  height: 6rem;
+  min-width: 6rem !important;
+  max-width: 6rem !important;
+  min-height: 6rem !important;
+  max-height: 6rem !important;
+  margin: 0 !important;
+  overflow: hidden;
+  align-self: center;
+}
+
+.card-info {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex: 1 1;
+  padding: 0.3rem;
+  padding-right: 1rem;
+  max-width: calc(100% - 11.3rem);
+}
+
+.card-info .card-title,
+.card-info .card-content,
+.card-info .card-accent {
+  padding: 0.3rem 1rem;
+}
+
+.card-title,
+.card-content {
+  padding: 0.3rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+}
+
+.card-info .card-title {
+  font-size: 1rem;
+  max-height: 1.4rem;
+  font-weight: bolder;
+  max-width: 100%;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.card-info .card-content {
+  max-height: 2.5rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.card-accent {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  min-width: 4rem !important;
+  max-width: 4rem !important;
+  min-height: 4rem !important;
+  max-height: 4rem !important;
+  align-self: center;
+  font-size: 1.6rem;
+}
+
+.no-print {
+  display: none;
+}

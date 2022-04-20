@@ -1,0 +1,24 @@
+@import "theme";
+@import "mixins";
+
+:host {
+  @include flex(row nowrap, center, flex-start);
+  flex: 1 1;
+  position: relative;
+  padding: 0.3rem 0.9rem;
+  height: 2.6rem;
+  max-height: 2.6rem;
+  // border-radius: 12rem;
+  background-color: white;
+  input {
+    flex: 1 0;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent !important;
+  }
+  i {
+    font-size: 1.3rem;
+    color: get-color("dark", 0.3);
+  }
+}

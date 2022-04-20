@@ -1,0 +1,39 @@
+$colors: (
+  "dark": #2f3a3f,
+  "light": #f3f6f9,
+  "gray": #90a3ad,
+  "primary": #e4c168,
+  "info": #3399aa,
+  "danger": #bb3345,
+  "success": #33bb99,
+);
+
+$contrasts: (
+  "dark": #f3f6f9,
+  "light": #242833,
+  "gray": #f3f6f9,
+  "primary": #f3f6f9,
+  "info": #f3f6f9,
+  "danger": #f3f6f9,
+  "success": #f3f6f9,
+);
+
+@function get-color($name, $alpha: 1) {
+  @return rgba(map-get($colors, $name), $alpha);
+}
+
+@function get-contrast($key, $alpha: 1) {
+  @return rgba(map-get($contrasts, $key), $alpha);
+}
+
+/// Computes a bottom-shadow for a card effect.
+/// @param {Number} $depth - depth level
+/// @return {List}
+
+@function bottom-shadow($depth) {
+  $primary-offset: nth(1.5 3 6 10 15, $depth) * 1px;
+  $blur: nth(1 3 3 5 6, $depth) * 4px;
+  $color: rgba(black, nth(0.24 0.23 0.23 0.22 0.22, $depth));
+
+  @return 0 $primary-offset $blur $color;
+}

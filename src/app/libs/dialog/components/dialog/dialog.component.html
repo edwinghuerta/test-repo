@@ -1,0 +1,36 @@
+<div
+  class="backdrop"
+  [@backdrop]="state"
+  (click)="cancellable && close()" 
+  (swipedown)="close()"
+></div>
+<!-- (touchmove)="onTouchMove($event)"
+(touchend)="onTouchEnd()" -->
+<div class="dialog-frame"
+  (swipedown)="close()"
+  (click)="$event.stopPropagation()" 
+  [@frame]="state"
+>
+  <div class="dialog-frame-header" *ngIf="!noHeader">
+    <div class="dialog-title">{{ title || "" }}</div>
+    <div class="dialog-actions">
+      <a
+        class="dialog-maxmin"
+        (click)="maximized = !maximized"
+        *ngIf="!locksize"
+      >
+        <i class="fal fa-{{ maximized ? 'compress-alt' : 'expand-alt' }}"></i>
+      </a>
+      <a
+        class="dialog-close"
+        (click)="cancellable && close()"
+        *ngIf="cancellable"
+      >
+        <i class="fal fa-times"></i>
+      </a>
+    </div>
+  </div>
+  <div class="dialog-frame-content">
+    <ng-template #frame></ng-template>
+  </div>
+</div>

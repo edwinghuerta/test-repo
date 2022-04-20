@@ -1,0 +1,9 @@
+@import "mixins";
+@import "theme";
+
+.receipt-container {
+    img {
+        width: 100% !important;
+        height: auto !important;
+    }   
+}

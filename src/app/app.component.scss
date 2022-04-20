@@ -1,0 +1,49 @@
+@import "mixins";
+@import "theme";
+
+:host {
+  @include flex(column nowrap, stretch, flex-start);
+
+  .new-version {
+    position: absolute;
+    @include bounds(0, 0, 5rem, 0);
+  }
+
+  main {
+    @include flex(column nowrap, stretch);
+    @include size(100vw, auto);
+    flex: 1 1;
+  }
+
+  navbar {
+    position: fixed;
+    bottom: 0;
+  }
+
+  @media (min-width: 500px) {
+    align-items: center !important;
+    &:not(.content-fullscreen) main,
+    navbar {
+      max-width: 500px !important;
+      box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    }
+    navbar {
+      overflow: hidden !important;
+      border-radius: 1rem 1rem 0 0 !important;
+    }
+  }
+}
+
+:host.content-fullscreen {
+  navbar,
+  app-header,
+  app-scope-menu {
+    display: none;
+  }
+
+  main {
+    position: absolute;
+    margin: 0 !important;
+    @include bounds(0, 0, 0, 0);
+  }
+}
